@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/charlie-haley/vyconfigure/pkg/options"
+	"github.com/offline-kollektiv/vyconfigure/pkg/options"
 )
 
 type Client struct {

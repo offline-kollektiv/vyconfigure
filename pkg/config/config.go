@@ -5,8 +5,8 @@ import (
 	"path"
 	"strings"
 
-	"github.com/charlie-haley/vyconfigure/pkg/convert"
-	"github.com/charlie-haley/vyconfigure/pkg/options"
+	"github.com/offline-kollektiv/vyconfigure/pkg/convert"
+	"github.com/offline-kollektiv/vyconfigure/pkg/options"
 	"sigs.k8s.io/yaml"
 )
 

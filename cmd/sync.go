@@ -1,9 +1,9 @@
 package cmd
 
 import (
-	"github.com/charlie-haley/vyconfigure/pkg/api"
-	"github.com/charlie-haley/vyconfigure/pkg/config"
-	"github.com/charlie-haley/vyconfigure/pkg/options"
+	"github.com/offline-kollektiv/vyconfigure/pkg/api"
+	"github.com/offline-kollektiv/vyconfigure/pkg/config"
+	"github.com/offline-kollektiv/vyconfigure/pkg/options"
 	"github.com/urfave/cli/v2"
 )
 

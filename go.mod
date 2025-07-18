@@ -1,4 +1,4 @@
-module github.com/charlie-haley/vyconfigure
+module github.com/offline-kollektiv/vyconfigure
 
 go 1.19
 

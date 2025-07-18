@@ -8,7 +8,7 @@ __Note: this project is far from production ready, use at your own risk!__
 
 You will need to enable the HTTP API on your VyOS instance, [refer to the upstream documentation for how to configure it.](https://docs.vyos.io/en/latest/configuration/service/https.html)
 
-[The latest binary is available in releases](https://github.com/charlie-haley/vyconfigure/releases). [There's also a Docker Image available on GHCR.](https://github.com/charlie-haley/vyconfigure/pkgs/container/vyconfigure)
+[The latest binary is available in releases](https://github.com/offline-kollektiv/vyconfigure/releases). [There's also a Docker Image available on GHCR.](https://github.com/offline-kollektiv/vyconfigure/pkgs/container/vyconfigure)
 
 ## Workflow
 You should start by syncing your existing configuration to your local filesystem so you can begin using VyConfigure.
@@ -36,4 +36,4 @@ I created VyConfigure so I could manage my VyOS config the GitOps way. I found t
 ## Unsupported features
 Currently, configuring users with vyconfigure is explicity blocked due to complexities around encrypted passwords, for now it's recommended you configure these as usual.
 
-[Please raise an issue](https://github.com/charlie-haley/vyconfigure/issues) for any issues or proposed features. Contributions also welcome 😊
+[Please raise an issue](https://github.com/offline-kollektiv/vyconfigure/issues) for any issues or proposed features. Contributions also welcome 😊

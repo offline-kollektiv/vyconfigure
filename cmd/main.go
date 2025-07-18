@@ -3,7 +3,7 @@ package cmd
 import (
 	"os"
 
-	"github.com/charlie-haley/vyconfigure/pkg/options"
+	"github.com/offline-kollektiv/vyconfigure/pkg/options"
 	log "github.com/sirupsen/logrus"
 	"github.com/urfave/cli/v2"
 )

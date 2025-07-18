@@ -1,10 +1,10 @@
 package cmd
 
 import (
-	"github.com/charlie-haley/vyconfigure/pkg/api"
-	"github.com/charlie-haley/vyconfigure/pkg/config"
-	"github.com/charlie-haley/vyconfigure/pkg/convert"
-	"github.com/charlie-haley/vyconfigure/pkg/options"
+	"github.com/offline-kollektiv/vyconfigure/pkg/api"
+	"github.com/offline-kollektiv/vyconfigure/pkg/config"
+	"github.com/offline-kollektiv/vyconfigure/pkg/convert"
+	"github.com/offline-kollektiv/vyconfigure/pkg/options"
 	"github.com/fatih/color"
 	diff "github.com/r3labs/diff/v3"
 	"github.com/urfave/cli/v2"

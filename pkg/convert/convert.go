@@ -5,7 +5,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/charlie-haley/vyconfigure/pkg/api"
+	"github.com/offline-kollektiv/vyconfigure/pkg/api"
 	"sigs.k8s.io/yaml"
 )
 

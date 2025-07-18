@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/charlie-haley/vyconfigure/cmd"
+	"github.com/offline-kollektiv/vyconfigure/cmd"
 )
 
 func main() {
