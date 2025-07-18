@@ -1,17 +1,19 @@
 package cmd
 
 import (
+	"context"
+
+	"github.com/fatih/color"
 	"github.com/offline-kollektiv/vyconfigure/pkg/api"
 	"github.com/offline-kollektiv/vyconfigure/pkg/config"
 	"github.com/offline-kollektiv/vyconfigure/pkg/convert"
 	"github.com/offline-kollektiv/vyconfigure/pkg/options"
-	"github.com/fatih/color"
 	diff "github.com/r3labs/diff/v3"
-	"github.com/urfave/cli/v2"
+	"github.com/urfave/cli/v3"
 )
 
-func plan(c *cli.Context) error {
-	o := options.GetOptions(c)
+func plan(ctx context.Context, cmd *cli.Command) error {
+	o := options.GetOptions(cmd)
 
 	// get remote config as cmds
 	client, err := api.CreateClient(o)

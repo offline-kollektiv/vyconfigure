@@ -1,16 +1,18 @@
 package cmd
 
 import (
+	"context"
+
 	"github.com/offline-kollektiv/vyconfigure/pkg/api"
 	"github.com/offline-kollektiv/vyconfigure/pkg/config"
 	"github.com/offline-kollektiv/vyconfigure/pkg/convert"
 	"github.com/offline-kollektiv/vyconfigure/pkg/options"
 	r3diff "github.com/r3labs/diff/v3"
-	"github.com/urfave/cli/v2"
+	"github.com/urfave/cli/v3"
 )
 
-func apply(c *cli.Context) error {
-	o := options.GetOptions(c)
+func apply(ctx context.Context, cmd *cli.Command) error {
+	o := options.GetOptions(cmd)
 
 	// get remote config as cmds
 	client, err := api.CreateClient(o)
