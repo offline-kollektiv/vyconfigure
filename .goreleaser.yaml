@@ -1,3 +1,5 @@
+version: 2
+
 env:
   - GO111MODULE=on
 
@@ -18,10 +20,10 @@ builds:
 
 dockers:
   - image_templates:
-      - "ghcr.io/charlie-haley/vyconfigure:latest-amd64"
-      - "ghcr.io/charlie-haley/vyconfigure:{{ .Version }}-amd64"
-      - "ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}-amd64"
-      - "ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}-amd64"
+      - "ghcr.io/offline-kollektiv/vyconfigure:latest-amd64"
+      - "ghcr.io/offline-kollektiv/vyconfigure:{{ .Version }}-amd64"
+      - "ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}-amd64"
+      - "ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}-amd64"
     use: buildx
     dockerfile: Dockerfile
     goarch: amd64
@@ -36,10 +38,10 @@ dockers:
       - "--build-arg=VCS_REF={{.FullCommit}}"
       - "--platform=linux/amd64"
   - image_templates:
-      - "ghcr.io/charlie-haley/vyconfigure:latest-arm64v8"
-      - "ghcr.io/charlie-haley/vyconfigure:{{ .Version }}-arm64v8"
-      - "ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}-arm64v8"
-      - "ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}-arm64v8"
+      - "ghcr.io/offline-kollektiv/vyconfigure:latest-arm64v8"
+      - "ghcr.io/offline-kollektiv/vyconfigure:{{ .Version }}-arm64v8"
+      - "ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}-arm64v8"
+      - "ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}-arm64v8"
     use: buildx
     dockerfile: Dockerfile
     goarch: arm64
@@ -55,25 +57,25 @@ dockers:
     - "--platform=linux/arm64/v8"
 
 docker_manifests:
-  - name_template: ghcr.io/charlie-haley/vyconfigure:latest
+  - name_template: ghcr.io/offline-kollektiv/vyconfigure:latest
     image_templates:
-    - ghcr.io/charlie-haley/vyconfigure:latest-amd64
-    - ghcr.io/charlie-haley/vyconfigure:latest-arm64v8
+    - ghcr.io/offline-kollektiv/vyconfigure:latest-amd64
+    - ghcr.io/offline-kollektiv/vyconfigure:latest-arm64v8
 
-  - name_template: ghcr.io/charlie-haley/vyconfigure:{{ .Version }}
+  - name_template: ghcr.io/offline-kollektiv/vyconfigure:{{ .Version }}
     image_templates:
-    - ghcr.io/charlie-haley/vyconfigure:{{ .Version }}-amd64
-    - ghcr.io/charlie-haley/vyconfigure:{{ .Version }}-arm64v8
+    - ghcr.io/offline-kollektiv/vyconfigure:{{ .Version }}-amd64
+    - ghcr.io/offline-kollektiv/vyconfigure:{{ .Version }}-arm64v8
 
-  - name_template: ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}
+  - name_template: ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}
     image_templates:
-    - ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}-amd64
-    - ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}-arm64v8
+    - ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}-amd64
+    - ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}.{{ .Patch }}-arm64v8
 
-  - name_template: ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}
+  - name_template: ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}
     image_templates:
-    - ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}-amd64
-    - ghcr.io/charlie-haley/vyconfigure:{{ .Major }}.{{ .Minor }}-arm64v8
+    - ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}-amd64
+    - ghcr.io/offline-kollektiv/vyconfigure:{{ .Major }}.{{ .Minor }}-arm64v8
 
 release:
   prerelease: auto
