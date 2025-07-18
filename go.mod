@@ -1,6 +1,8 @@
 module github.com/offline-kollektiv/vyconfigure
 
-go 1.19
+go 1.22
+
+toolchain go1.24.5
 
 require (
 	github.com/fatih/color v1.18.0
@@ -8,6 +10,7 @@ require (
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.10.0
 	github.com/urfave/cli/v2 v2.27.7
+	github.com/urfave/cli/v3 v3.3.8
 	sigs.k8s.io/yaml v1.3.0
 )
 
