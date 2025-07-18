@@ -28,7 +28,7 @@ jobs:
         go-version: 1.19
 
     - name: Run GoReleaser check
-      uses: goreleaser/goreleaser-action@v2.8.1
+      uses: goreleaser/goreleaser-action@v6.3.0
       with:
         version: latest
         args: build --skip-validate 
