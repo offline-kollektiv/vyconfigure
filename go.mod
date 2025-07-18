@@ -6,7 +6,7 @@ require (
 	github.com/fatih/color v1.18.0
 	github.com/r3labs/diff/v3 v3.0.1
 	github.com/sirupsen/logrus v1.8.1
-	github.com/stretchr/testify v1.6.1
+	github.com/stretchr/testify v1.10.0
 	github.com/urfave/cli/v2 v2.4.0
 	sigs.k8s.io/yaml v1.3.0
 )
@@ -26,5 +26,5 @@ require (
 	golang.org/x/sys v0.25.0 // indirect
 	google.golang.org/appengine v1.6.6 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
