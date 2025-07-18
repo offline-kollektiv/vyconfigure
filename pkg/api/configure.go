@@ -32,7 +32,11 @@ func (c *Client) Configure(cmds []Cmd) error {
 		return err
 	}
 
-	defer res.Body.Close()
+	defer func() {
+                if tempErr := res.Body.Close(); tempErr != nil {
+                        err = tempErr
+                }
+        }()
 	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return err
