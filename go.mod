@@ -9,7 +9,7 @@ require (
 	github.com/r3labs/diff/v3 v3.0.1
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.10.0
-	github.com/urfave/cli/v2 v2.27.7
+	github.com/urfave/cli/v3 v3.3.8
 	github.com/urfave/cli/v3 v3.3.8
 	sigs.k8s.io/yaml v1.5.0
 )
