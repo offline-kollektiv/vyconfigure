@@ -30,7 +30,11 @@ func (c *Client) Retrieve() (map[string]interface{}, error) {
 		return nil, err
 	}
 
-	defer res.Body.Close()
+	defer func() {
+                if tempErr := res.Body.Close(); tempErr != nil {
+                        err = tempErr
+                }
+        }()
 	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return nil, err
