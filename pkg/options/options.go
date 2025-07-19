@@ -1,6 +1,6 @@
 package options
 
-import "github.com/urfave/cli/v2"
+import "github.com/urfave/cli/v3"
 
 type Options struct {
 	Host            string
@@ -9,11 +9,11 @@ type Options struct {
 	Insecure        bool
 }
 
-func GetOptions(c *cli.Context) *Options {
+func GetOptions(cmd *cli.Command) *Options {
 	return &Options{
-		Host:            c.String("host"),
-		ApiKey:          c.String("api-key"),
-		ConfigDirectory: c.String("config-dir"),
-		Insecure:        c.Bool("insecure"),
+		Host:            cmd.String("host"),
+		ApiKey:          cmd.String("api-key"),
+		ConfigDirectory: cmd.String("config-dir"),
+		Insecure:        cmd.Bool("insecure"),
 	}
 }
