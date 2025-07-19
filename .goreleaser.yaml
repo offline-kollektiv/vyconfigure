@@ -1,5 +1,7 @@
 version: 2
 
+project_name: vyconfigure
+
 env:
   - GO111MODULE=on
 
