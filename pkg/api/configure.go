@@ -33,10 +33,10 @@ func (c *Client) Configure(cmds []Cmd) error {
 	}
 
 	defer func() {
-                if tempErr := res.Body.Close(); tempErr != nil {
-                        err = tempErr
-                }
-        }()
+		if tempErr := res.Body.Close(); tempErr != nil {
+			err = tempErr
+		}
+	}()
 	body, err := io.ReadAll(res.Body)
 	if err != nil {
 		return err
@@ -47,9 +47,10 @@ func (c *Client) Configure(cmds []Cmd) error {
 	if err != nil {
 		return err
 	}
-	println(string(body))
-
-	if !r.Success {
+	if r.Success {
+		fmt.Println("✅ Changes applied successfully.")
+	} else {
+		fmt.Println("❌ Error applying changes.")
 		return errors.New(r.Err)
 	}
 
