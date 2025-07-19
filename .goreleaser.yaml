@@ -1,5 +1,7 @@
 version: 2
 
+project_name: vyconfigure
+
 env:
   - GO111MODULE=on
 
@@ -24,4 +26,4 @@ release:
   prerelease: auto
 
 archives:
-  - format: binary
+  - formats: [ 'binary' ]
