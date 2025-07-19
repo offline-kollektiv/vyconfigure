@@ -3,6 +3,7 @@ package cmd
 import (
 	"context"
 	"os"
+	"runtime/debug"
 
 	"net/mail"
 
@@ -11,7 +12,14 @@ import (
 	"github.com/urfave/cli/v3"
 )
 
-var appVersion = "development"
+func GetVersion() (ret string) {
+	if b, ok := debug.ReadBuildInfo(); ok && len(b.Main.Version) > 0 {
+		ret = b.Main.Version
+	} else {
+		ret = "unknown"
+	}
+	return
+}
 
 func Run() {
 	o := options.Options{}
@@ -19,7 +27,7 @@ func Run() {
 	app := &cli.Command{
 		Name:                  "vyconfigure",
 		Usage:                 "Declarative configuration for VyOS.",
-		Version:               appVersion,
+		Version:               GetVersion(),
 		EnableShellCompletion: true,
 		Action:                version,
 
