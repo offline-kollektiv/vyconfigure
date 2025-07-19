@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/fatih/color"
 	"github.com/offline-kollektiv/vyconfigure/pkg/api"
@@ -41,7 +42,7 @@ func plan(ctx context.Context, cmd *cli.Command) error {
 	}
 
 	if len(changelog) > 0 {
-		println("Changes to be applied:")
+		fmt.Println("Changes to be applied:")
 		for _, change := range changelog {
 			if change.Type == "create" {
 				color.Green("+ set " + change.To.(string))
@@ -51,7 +52,7 @@ func plan(ctx context.Context, cmd *cli.Command) error {
 			}
 		}
 	} else {
-		println("No changes to apply.")
+		fmt.Println("No changes to apply.")
 	}
 
 	return nil
