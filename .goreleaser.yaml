@@ -24,4 +24,4 @@ release:
   prerelease: auto
 
 archives:
-  - format: binary
+  - formats: [ 'binary' ]
