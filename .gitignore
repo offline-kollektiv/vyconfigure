@@ -3,3 +3,6 @@ config/*
 
 dist/
 dist/*
+
+vyconfigure
+vyconfigure.exe
