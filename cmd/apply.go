@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/offline-kollektiv/vyconfigure/pkg/api"
 	"github.com/offline-kollektiv/vyconfigure/pkg/config"
@@ -51,7 +52,7 @@ func apply(ctx context.Context, cmd *cli.Command) error {
 			}
 		}
 	} else {
-		println("No changes to apply.")
+		fmt.Println("No changes to apply.")
 		return nil
 	}
 
