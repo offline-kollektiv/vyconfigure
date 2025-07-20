@@ -9,7 +9,7 @@ import (
 )
 
 func version(ctx context.Context, cmd *cli.Command) error {
-	fmt.Println("vyconfigure", GetVersion())
+	fmt.Println("vyconfigure", cmd.Version)
 	os.Exit(0)
 	return nil
 }
