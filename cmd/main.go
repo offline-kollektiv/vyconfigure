@@ -57,7 +57,7 @@ func Run() {
 				Action: sync,
 			},
 			{
-				Name: "plan", Aliases: []string{"d"}, Usage: "shows the diff between the current directory and VyOS instance",
+				Name: "plan", Aliases: []string{"p"}, Usage: "shows the diff between the current directory and VyOS instance",
 				Action: plan,
 			},
 		},
