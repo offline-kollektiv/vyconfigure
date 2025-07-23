@@ -1,6 +1,6 @@
 package options
 
-import "github.com/urfave/cli/v3"
+import "github.com/spf13/cobra"
 
 type Options struct {
 	Host            string
@@ -9,11 +9,11 @@ type Options struct {
 	Insecure        bool
 }
 
-func GetOptions(cmd *cli.Command) *Options {
+func GetOptions(cmd *cobra.Command, args []string) *Options {
 	return &Options{
-		Host:            cmd.String("host"),
-		ApiKey:          cmd.String("api-key"),
-		ConfigDirectory: cmd.String("config-dir"),
-		Insecure:        cmd.Bool("insecure"),
+		Host:            "https://" + args[0],
+		ApiKey:          args[1],
+		ConfigDirectory: cmd.Flag("config-dir").Value.String(),
+		Insecure:        cmd.Flag("insecure").Value.String() == "true",
 	}
 }
