@@ -1,6 +1,7 @@
 package config
 
 import (
+	"log"
 	"os"
 	"path"
 	"strings"
@@ -43,6 +44,9 @@ func ReadAsCmds(o *options.Options) ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
+	if !hasYamlFile(files) {
+		log.Fatal("No configuration files found.")
+	}
 
 	var res []string
 	for _, f := range files {
@@ -64,4 +68,14 @@ func ReadAsCmds(o *options.Options) ([]string, error) {
 	}
 
 	return res, nil
+}
+
+// Returns true if at least one entry ends with ".yaml"
+func hasYamlFile(files []os.DirEntry) bool {
+	for _, f := range files {
+		if strings.HasSuffix(f.Name(), ".yaml") {
+			return true
+		}
+	}
+	return false
 }
