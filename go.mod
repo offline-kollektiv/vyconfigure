@@ -2,7 +2,7 @@ module github.com/offline-kollektiv/vyconfigure
 
 go 1.23.5
 
-toolchain go1.24.6
+toolchain go1.25.0
 
 require (
 	github.com/fatih/color v1.18.0
