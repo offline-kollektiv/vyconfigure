@@ -19,7 +19,7 @@ func CreateClient(o *options.Options) (*Client, error) {
 		t.TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	}
 
-	httpClient := &http.Client{Transport: t, Timeout: time.Duration(10) * time.Second}
+	httpClient := &http.Client{Transport: t, Timeout: time.Duration(o.Timeout) * time.Second}
 
 	client := &Client{
 		Options:    o,
