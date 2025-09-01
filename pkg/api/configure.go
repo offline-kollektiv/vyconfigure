@@ -18,7 +18,7 @@ type Cmd struct {
 	Path      []string `json:"path"`
 }
 
-func (c *Client) Configure(cmds []Cmd) error {
+func (c *Client) Configure(cmds []Cmd, save bool) error {
 	data, err := json.Marshal(cmds)
 	if err != nil {
 		return err
@@ -47,6 +47,17 @@ func (c *Client) Configure(cmds []Cmd) error {
 	if err != nil {
 		return err
 	}
+
+	if save {
+		res, err = c.httpClient.PostForm(fmt.Sprintf("%s/config-file", c.Options.Host), url.Values{
+			"data": {`{"op": "save"}`},
+			"key":  {c.Options.ApiKey},
+		})
+		if err != nil {
+			return err
+		}
+	}
+
 	if r.Success {
 		fmt.Println("✅ Changes applied successfully.")
 	} else {

@@ -43,7 +43,8 @@ var applyCmd = &cobra.Command{
 		cc := convert.CmdsToData(toCreate, "set")
 
 		cmds := append(dc, cc...)
-		err = client.Configure(cmds)
+		save, _ := cmd.Flags().GetBool("save")
+		err = client.Configure(cmds, save)
 		if err != nil {
 			log.Fatal(err)
 			os.Exit(1)
@@ -52,5 +53,6 @@ var applyCmd = &cobra.Command{
 }
 
 func init() {
+	applyCmd.Flags().Bool("save", true, "Save the configuration after applying changes.")
 	rootCmd.AddCommand(applyCmd)
 }
