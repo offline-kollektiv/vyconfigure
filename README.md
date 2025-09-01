@@ -40,6 +40,7 @@ Flags:
     --config-dir string   Directory where config is stored. (default ".")
 -h, --help                help for vyconfigure
     --insecure            Whether to skip verifying the SSL certificate.
+    --timeout int         Timeout in seconds for API requests. (default 30)
 -v, --version             version for vyconfigure
 ```
 

@@ -7,13 +7,18 @@ type Options struct {
 	ApiKey          string
 	ConfigDirectory string
 	Insecure        bool
+	Timeout         int64
 }
 
 func GetOptions(cmd *cobra.Command, args []string) *Options {
+	ConfigDirectory, _ := cmd.Flags().GetString("config-dir")
+	Insecure, _ := cmd.Flags().GetBool("insecure")
+	Timeout, _ := cmd.Flags().GetInt64("timeout")
 	return &Options{
 		Host:            "https://" + args[0],
 		ApiKey:          args[1],
-		ConfigDirectory: cmd.Flag("config-dir").Value.String(),
-		Insecure:        cmd.Flag("insecure").Value.String() == "true",
+		ConfigDirectory: ConfigDirectory,
+		Insecure:        Insecure,
+		Timeout:         Timeout,
 	}
 }
