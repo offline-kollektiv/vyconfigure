@@ -19,7 +19,7 @@ builds:
     flags:
       - -trimpath
     ldflags:
-      - -s -w
+      - -s -w -X 'github.com/offline-kollektiv/vyconfigure/cmd.Version={{.Version}}' -X 'github.com/offline-kollektiv/vyconfigure/cmd.Commit={{.ShortCommit}}' -X 'github.com/offline-kollektiv/vyconfigure/cmd.Date={{.Date}}'
     binary: vyconfigure
 
 release:
